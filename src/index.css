@@ -7,3 +7,8 @@
   --color-card: #282b2e;
   --color-cardVariant: #494848;
 }
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-onBackground);
+}
