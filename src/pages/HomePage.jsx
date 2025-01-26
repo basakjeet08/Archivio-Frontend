@@ -1,8 +1,14 @@
 import React from "react";
 import { data, imageArray } from "../data/homepage";
 import { Heading2, BodyText, CaptionText } from "../elements/Typegraphy";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  // Navigation Code
+  const navigate = useNavigate();
+  const handleCreateLibrary = () => navigate("/create-library");
+  const loginLibrary = () => navigate("/login");
+
   return (
     // Container for centering the div
     <div className="flex flex-col items-center justify-center py-12 gap-8">
@@ -18,7 +24,9 @@ const HomePage = () => {
           <HomePageContentItem
             data={data[1]}
             buttonTitle={"Get Started with Archivio"}
-            onClick={() => {}}
+            onClick={() => {
+              handleCreateLibrary();
+            }}
           />
         </div>
 
@@ -27,7 +35,9 @@ const HomePage = () => {
           <HomePageContentItem
             data={data[2]}
             buttonTitle={"Login"}
-            onClick={() => {}}
+            onClick={() => {
+              loginLibrary();
+            }}
           />
         </div>
       </div>
