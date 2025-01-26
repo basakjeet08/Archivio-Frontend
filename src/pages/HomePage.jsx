@@ -1,5 +1,6 @@
 import React from "react";
 import { data, imageArray } from "../data/homepage";
+import { Heading2, BodyText, CaptionText } from "../elements/Typegraphy";
 
 const HomePage = () => {
   return (
@@ -44,16 +45,14 @@ function HomePageImage({ src }) {
   );
 }
 
-const HomePageContentItem = ({ data, buttonTitle, onClick }) => {
+function HomePageContentItem({ data, buttonTitle, onClick }) {
   const { title, description } = data;
   return (
     <div className="flex-1 flex flex-col gap-6 rounded-3xl">
-      <h2 className="font-bold text-3xl">{title}</h2>
+      <Heading2 text={title} />
 
       {description.map((text, index) => (
-        <p key={index} className="opacity-80">
-          {text}
-        </p>
+        <BodyText key={index} text={text} />
       ))}
 
       {buttonTitle && onClick && (
@@ -61,11 +60,11 @@ const HomePageContentItem = ({ data, buttonTitle, onClick }) => {
           onClick={onClick}
           className="p-3 px-12 w-fit rounded-xl font-bold bg-cardVariant cursor-pointer hover:bg-primary transition-all duration-300 active:opacity-30"
         >
-          {buttonTitle}
+          <CaptionText text={buttonTitle} />
         </button>
       )}
     </div>
   );
-};
+}
 
 export default HomePage;
