@@ -5,26 +5,30 @@ const HomePage = () => {
   return (
     // Container for centering the div
     <div className="flex flex-col items-center justify-center py-12 gap-8">
-      {/* Grid Container */}
-      <div className="grid grid-cols-2 gap-20 place-items-center w-4/5">
-        <HomePageImage src={imageArray[0]} />
+      {/* Flex Container */}
+      <div className=" flex flex-col gap-28 w-4/5">
+        <div className="flex flex-col gap-4 items-center lg:flex-row lg:gap-20">
+          <HomePageImage src={imageArray[0]} />
+          <HomePageContentItem data={data[0]} />
+        </div>
 
-        <HomePageContentItem data={data[0]} />
+        <div className="flex flex-col gap-4 items-center lg:flex-row-reverse lg:gap-20">
+          <HomePageImage src={imageArray[1]} />
+          <HomePageContentItem
+            data={data[1]}
+            buttonTitle={"Get Started with Archivio"}
+            onClick={() => {}}
+          />
+        </div>
 
-        <HomePageContentItem
-          data={data[1]}
-          buttonTitle={"Get Started with Archivio"}
-          onClick={() => {}}
-        />
-
-        <HomePageImage src={imageArray[1]} />
-        <HomePageImage src={imageArray[2]} />
-
-        <HomePageContentItem
-          data={data[2]}
-          buttonTitle={"Login"}
-          onClick={() => {}}
-        />
+        <div className="flex flex-col gap-4 items-center lg:flex-row lg:gap-20">
+          <HomePageImage src={imageArray[2]} />
+          <HomePageContentItem
+            data={data[2]}
+            buttonTitle={"Login"}
+            onClick={() => {}}
+          />
+        </div>
       </div>
     </div>
   );
@@ -33,7 +37,7 @@ const HomePage = () => {
 function HomePageImage({ src }) {
   return (
     <img
-      className="h-96 w-full object-cover rounded-xl"
+      className="h-96 w-full object-cover rounded-xl lg:flex-1 "
       src={src}
       alt="Library Image"
     />
@@ -43,7 +47,7 @@ function HomePageImage({ src }) {
 const HomePageContentItem = ({ data, buttonTitle, onClick }) => {
   const { title, description } = data;
   return (
-    <div className="flex flex-col gap-6 rounded-3xl p-4">
+    <div className="flex-1 flex flex-col gap-6 rounded-3xl">
       <h2 className="font-bold text-3xl">{title}</h2>
 
       {description.map((text, index) => (
