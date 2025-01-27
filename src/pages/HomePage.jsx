@@ -2,12 +2,13 @@ import React from "react";
 import { data, imageArray } from "../data/homepage";
 import { Heading2, BodyText, CaptionText } from "../elements/Typegraphy";
 import { useNavigate } from "react-router-dom";
+import { LOGIN_ROUTE, REGISTER_ROUTE } from "../routes/AppRoutes";
 
 const HomePage = () => {
   // Navigation Code
   const navigate = useNavigate();
-  const handleCreateLibrary = () => navigate("/create-library");
-  const loginLibrary = () => navigate("/login");
+  const registerUser = () => navigate(REGISTER_ROUTE);
+  const loginUser = () => navigate(LOGIN_ROUTE);
 
   return (
     // Container for centering the div
@@ -24,9 +25,7 @@ const HomePage = () => {
           <HomePageContentItem
             data={data[1]}
             buttonTitle={"Get Started with Archivio"}
-            onClick={() => {
-              handleCreateLibrary();
-            }}
+            onClick={() => registerUser()}
           />
         </div>
 
@@ -35,9 +34,7 @@ const HomePage = () => {
           <HomePageContentItem
             data={data[2]}
             buttonTitle={"Login"}
-            onClick={() => {
-              loginLibrary();
-            }}
+            onClick={() => loginUser()}
           />
         </div>
       </div>
