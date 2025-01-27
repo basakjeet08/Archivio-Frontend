@@ -94,7 +94,11 @@ export const PasswordInput = ({
           required={required}
         />
 
-        <button type="button" onClick={toggleVisibility}>
+        <button
+          className="p-1 rounded-sm transition-all duration-300 hover:bg-cardVariant active:opacity-30"
+          type="button"
+          onClick={toggleVisibility}
+        >
           {VisibleIcon(isVisible)}
         </button>
       </div>
