@@ -13,7 +13,7 @@ const RegisterPage = () => {
         onSubmit={() => registerUser}
         className="flex flex-col gap-6 p-14 rounded-3xl bg-card shadow-xl shadow-primary hover:shadow-2xl focus-within:shadow-2xl transition-all duration-300"
       >
-        <Heading2 text="Register Form" />
+        <Heading2>Register Form</Heading2>
         <fieldset className="flex flex-row gap-4 items-center justify-around">
           <Input
             name="firstname"
@@ -61,7 +61,9 @@ const RegisterPage = () => {
           required
         />
 
-        <PrimaryButton className="self-center" text="Register" type="submit" />
+        <PrimaryButton className="self-center" type="submit">
+          Register
+        </PrimaryButton>
       </form>
     </div>
   );

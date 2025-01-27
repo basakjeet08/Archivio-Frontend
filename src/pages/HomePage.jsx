@@ -57,14 +57,14 @@ function HomePageContentItem({ data, buttonTitle, onClick }) {
   const { title, description } = data;
   return (
     <div className="flex-1 flex flex-col gap-6 rounded-3xl">
-      <Heading2 text={title} />
+      <Heading2>{title}</Heading2>
 
       {description.map((text, index) => (
-        <BodyText key={index} text={text} />
+        <BodyText key={index}>{text}</BodyText>
       ))}
 
       {buttonTitle && onClick && (
-        <PrimaryButton text={buttonTitle} onClick={onClick} />
+        <PrimaryButton onClick={onClick}>{buttonTitle}</PrimaryButton>
       )}
     </div>
   );
