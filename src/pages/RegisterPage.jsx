@@ -1,7 +1,7 @@
 import React from "react";
 import { Heading2 } from "../elements/Typegraphy";
 import { BoxInput, CheckboxInput, PasswordInput } from "../components/Input";
-import { PrimaryButton } from "../elements/Buttons";
+import { PrimaryButton, OutlinedButton } from "../elements/Buttons";
 import useRegister from "../hooks/useRegister";
 import { useNavigate } from "react-router-dom";
 import { LOGIN_ROUTE } from "../routes/AppRoutes";
@@ -98,9 +98,9 @@ const RegisterPage = () => {
           Register
         </PrimaryButton>
 
-        <PrimaryButton className="w-full" onClick={navigateToLoginPage}>
+        <OutlinedButton className="w-full" onClick={navigateToLoginPage}>
           Go to Login Page
-        </PrimaryButton>
+        </OutlinedButton>
       </form>
     </div>
   );

@@ -21,7 +21,7 @@ export const BoxInput = ({
       )}
       <input
         id={name}
-        className="p-4 outline-none text-sm rounded-sm bg-card focus:border-1 focus:border-primary"
+        className="p-4 outline-none text-sm rounded-sm border-1 border-card  bg-card focus:border-primary"
         name={name}
         type={type}
         placeholder={placeholder}
@@ -82,7 +82,7 @@ export const PasswordInput = ({
         </label>
       )}
 
-      <div className="flex items-center rounded-sm px-4 bg-card gap-2 focus-within:border-1 focus-within:border-primary">
+      <div className="flex items-center gap-2 px-4 rounded-sm border-1 border-card bg-card focus-within:border-primary">
         <input
           id={name}
           className="flex-1 py-4 outline-none text-sm"
