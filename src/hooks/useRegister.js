@@ -8,12 +8,14 @@ function useRegister() {
     username: "",
     password: "",
     confirmPassword: "",
+    agreeStatus: false,
   });
 
   // Updating the data structure
   const updateUser = (event) => {
     const name = event.target.name;
-    const value = event.target.value;
+    const value =
+      name === "agreeStatus" ? event.target.checked : event.target.value;
 
     setUser((prev) => {
       return {
@@ -24,7 +26,10 @@ function useRegister() {
   };
 
   // Registering the user
-  const registerUser = (event) => {};
+  const registerUser = (event) => {
+    event.preventDefault();
+    console.log(user);
+  };
 
   return { user, updateUser, registerUser };
 }
