@@ -1,8 +1,9 @@
 import React from "react";
 import { data, imageArray } from "../data/homepage";
-import { Heading2, BodyText, CaptionText } from "../elements/Typegraphy";
+import { Heading2, BodyText } from "../elements/Typegraphy";
 import { useNavigate } from "react-router-dom";
 import { LOGIN_ROUTE, REGISTER_ROUTE } from "../routes/AppRoutes";
+import { PrimaryButton } from "../elements/Buttons";
 
 const HomePage = () => {
   // Navigation Code
@@ -63,12 +64,7 @@ function HomePageContentItem({ data, buttonTitle, onClick }) {
       ))}
 
       {buttonTitle && onClick && (
-        <button
-          onClick={onClick}
-          className="p-3 px-12 w-fit rounded-xl font-bold bg-cardVariant cursor-pointer hover:bg-primary transition-all duration-300 active:opacity-30"
-        >
-          <CaptionText text={buttonTitle} />
-        </button>
+        <PrimaryButton text={buttonTitle} onClick={onClick} />
       )}
     </div>
   );

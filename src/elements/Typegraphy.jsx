@@ -7,5 +7,5 @@ export const BodyText = ({ text, className }) => {
 };
 
 export const CaptionText = ({ text, className }) => {
-  return <p className={`text-xs ${className}`}>{text}</p>;
+  return <p className={`text-sm font-semibold ${className}`}>{text}</p>;
 };
