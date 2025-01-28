@@ -10,6 +10,7 @@ import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import DashboardPage from "../pages/DashboardPage";
+import MainLayout from "../layouts/MainLayout";
 
 // Routes for all the different screens
 export const HOME_ROUTE = "/";
@@ -41,14 +42,16 @@ const AppRoutes = () => {
       <Routes>
         {/* Wrapping all the Public Routes under the Public JSX */}
         <Route element={<PublicRoutes />}>
-          <Route index path={HOME_ROUTE} element={<HomePage />} />
+          <Route index element={<HomePage />} />
           <Route path={LOGIN_ROUTE} element={<LoginPage />} />
           <Route path={REGISTER_ROUTE} element={<RegisterPage />} />
         </Route>
 
         {/* Wrapping the Private Routes under the prvate JSX */}
         <Route element={<PrivateRoutes />}>
-          <Route path={DASHBOARD_ROUTE} element={<DashboardPage />} />
+          <Route element={<MainLayout />}>
+            <Route path={DASHBOARD_ROUTE} element={<DashboardPage />} />
+          </Route>
         </Route>
 
         {/* Root Layout to show Error Pages */}
